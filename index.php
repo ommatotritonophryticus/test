@@ -10,6 +10,7 @@
         
         <script src="/static/js/jquery-3.7.1.js"></script>
         
+        <link href="/static/css/main.css" rel="stylesheet">
     </head>
 
     <body>
@@ -41,5 +42,6 @@
             </div>
             <?php } ?>
         </div>
+        <script src="/static/js/main.js"></script>
     </body>
 </html>
