@@ -1,0 +1,24 @@
+.content {
+    width: 60em;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.host-team {
+    text-align: right;
+}
+
+.guest-team {
+    text-align: left;
+}
+
+.match { 
+    width: 49%;
+}
+
+.match-delimiter {
+    width: 1em;
+}

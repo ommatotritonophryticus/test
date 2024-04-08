@@ -15,25 +15,25 @@
 
     <body>
     
-        <div>
+        <div class="content">
             <?php foreach($rounds as $round_count => $round) { ?>    
-            <div>    
+            <div class="round">    
                 <h1>Круг <?= $round_count ?></h1>
                 
                 <?php foreach(array_chunk($round, 10) as $tour_count => $tour) { ?>
-                <div>
+                <div class="tour">
                         <h2>Тур <?= $tour_count ?></h2  >
-                    <table>
+                    <table class="table">
                         <tr>
-                            <th>Хозяева</th>
+                            <th class="host-team">Хозяева</th>
                             <th></th>
-                            <th>Гости</th>
+                            <th class="guest-team">Гости</th>
                         </tr>
                         <?php foreach($tour as $round) { ?>
                             <tr>
-                                <td> <?= $round[0] ?></td>
-                                <td>-</td>
-                                <td><?= $round[1] ?></td>
+                                <td class="match host-team"> <?= $round[0] ?></td>
+                                <td class="match-delimiter">-</td>
+                                <td class="match guest-team"><?= $round[1] ?></td>
                             </tr>
                         <?php } ?>
                     </table>
