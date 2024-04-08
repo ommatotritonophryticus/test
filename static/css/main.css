@@ -22,3 +22,14 @@
 .match-delimiter {
     width: 1em;
 }
+
+.tour {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+.match-selected td{
+    background: #333 !important;
+    color: #0a0 !important;
+}
