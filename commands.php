@@ -23,6 +23,8 @@ $teams = Array(
     'Дерби Каунти',
 );
 
+shuffle($teams);
+
 $result = [];
 
 for($delta = 0; $delta < sizeof($teams) - 1; $delta++) {
