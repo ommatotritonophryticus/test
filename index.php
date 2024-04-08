@@ -1,40 +1,12 @@
 <?php
+require("commands.php");
 
-$teams = Array(
-    'Ливерпуль',
-    'Челси',
-    'Тоттенхэм Хотспур',
-    'Арсенал',
-    'Манчестер Юнайтед',
-    'Эвертон',
-    'Лестер Сити',
-    'Вест Хэм Юнайтед',
-    'Уотфорд',
-    'Борнмут',
-    'Бернли',
-    'Саутгемптон',
-    'Брайтон энд Хоув Альбион',
-    'Норвич Сити',
-    'Шеффилд Юнайтед',
-    'Фулхэм',
-    'Сток Сити',
-    'Мидлсбро',
-    'Суонси Сити',
-    'Дерби Каунти',
-);
-
-$result = [];
-
-for($delta = 0; $delta < sizeof($teams) - 1; $delta++) {
-    for($cursor = 0; $cursor < sizeof($teams); $cursor++) {
-        array_push(
-            $result, 
-            [
-                $teams[$cursor], 
-                $teams[ ($cursor + $delta + 1) % sizeof($teams) ]
-            ]
-        );
+foreach($rounds as $round_count => $round) { 
+    echo "Круг ".$round_count."\n\n";
+    foreach(array_chunk($round, 10) as $tour_count => $tour) {
+        echo "Тур ".$tour_count."\n\n";
+        foreach($tour as $round) {
+            echo $round[0]."-".$round[1]."\n\n";
+        }
     }
 }
-
-$rounds = array_chunk($result, sizeof($result) / 2);
