@@ -18,11 +18,11 @@
         <div class="content">
             <?php foreach($rounds as $round_count => $round) { ?>    
             <div class="round">    
-                <h1>Круг <?= $round_count ?></h1>
+                <h1>Круг <?= $round_count+1 ?></h1>
                 
                 <?php foreach(array_chunk($round, 10) as $tour_count => $tour) { ?>
                 <div class="tour">
-                        <h2>Тур <?= $tour_count ?></h2  >
+                        <h2>Тур <?= $tour_count+1 ?></h2  >
                     <table class="table">
                         <tr>
                             <th class="host-team">Хозяева</th>
