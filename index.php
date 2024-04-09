@@ -20,7 +20,7 @@
             <div class="round">    
                 <h1>Круг <?= $round_count+1 ?></h1>
                 
-                <?php foreach(array_chunk($round, 10) as $tour_count => $tour) { ?>
+                <?php foreach($round as $tour_count => $tour) { ?>
                 <div class="tour">
                         <h2>Тур <?= $tour_count+1 ?></h2  >
                     <table class="table">

@@ -25,18 +25,43 @@ $teams = Array(
 
 shuffle($teams);
 
-$result = [];
+$first_round = array();
+$numTeams = count($teams);
 
-for($delta = 0; $delta < sizeof($teams) - 1; $delta++) {
-    for($cursor = 0; $cursor < sizeof($teams); $cursor++) {
-        array_push(
-            $result, 
-            [
-                $teams[$cursor], 
-                $teams[ ($cursor + $delta + 1) % sizeof($teams) ]
-            ]
-        );
+
+$halfNumTeams = $numTeams / 2;
+
+$reverse = false;
+for ($round = 1; $round < $numTeams; $round++) {
+    $matchesInRound = array();
+
+    for ($i = 0; $i < $halfNumTeams; $i++) {
+        $team1 = $teams[$i];
+        $team2 = $teams[$numTeams - $i - 1];
+
+
+        if ($reverse) {
+            $matchesInRound[] = array($team1, $team2);
+        } else {
+            $matchesInRound[] = array($team2, $team1);             
+        }
     }
+
+    $first_round[] = $matchesInRound;
+    $reverse = !$reverse;
+
+    $lastTeam = array_pop($teams);
+    array_splice($teams, 1, 0, $lastTeam);
 }
 
-$rounds = array_chunk($result, sizeof($result) / 2);
+$second_round = [];
+
+foreach($first_round as $tour) {
+    $new_tour = [];
+    foreach($tour as $match) {
+        $new_tour[] = [$match[1], $match[0]];
+    }
+    $second_round[] = $new_tour;
+}
+
+$rounds = [$first_round, $second_round];
