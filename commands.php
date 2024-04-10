@@ -25,7 +25,7 @@ $teams = Array(
 
 shuffle($teams);
 
-$first_round = array();
+$first_round = [];
 $numTeams = count($teams);
 
 
